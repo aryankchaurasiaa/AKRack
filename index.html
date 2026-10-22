@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AKRack - Hardware Manager</title>
+    
+    <style>
+      /* AKRack Premium Loading Animation */
+      body {
+        margin: 0;
+        background-color: #0f172a; /* Dark slate background */
+      }
+      #initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0f172a; 
+        z-index: 99999;
+      }
+      .akrack-logo {
+        font-size: 3.5rem;
+        font-weight: 900;
+        font-family: system-ui, -apple-system, sans-serif;
+        /* Green to Blue gradient */
+        background: linear-gradient(to right, #10b981, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 5px;
+        animation: pulse-glow 2s infinite ease-in-out;
+      }
+      
+      @keyframes pulse-glow {
+        0%, 100% { 
+          opacity: 0.8; 
+          transform: scale(0.95); 
+          filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.4)); 
+        }
+        50% { 
+          opacity: 1; 
+          transform: scale(1.05); 
+          filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.8)); 
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Jab tak React load hoga, ye animation chalega. React aate hi ye khud hat jayega -->
+      <div id="initial-loader">
+        <div class="akrack-logo">AKRack</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
